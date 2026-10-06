@@ -11,6 +11,7 @@ def leitor_arquivo(arquivo):
     try:
         with open(dados_path, 'r', newline='', encoding='utf-8') as f:
             leitor = csv.reader(f)
+            next(leitor, None)  #pula cabeçalho
 
             print("\n--- TODAS AS NOTAS ---")
             encontrou = False

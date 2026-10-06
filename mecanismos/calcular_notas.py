@@ -11,6 +11,7 @@ def _ler_notas():
     try:
         with open(arquivo, 'r', newline='', encoding='utf-8') as f:
             leitor = csv.reader(f)
+            next(leitor, None)  # Pula cabeçalho
             for linha in leitor:
                 if len(linha) < 2:
                     continue
